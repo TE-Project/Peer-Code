@@ -103,9 +103,9 @@ const Idecontainer = (props)=>{
                   <button className="codebutton" onClick={handleDrawerOpen}>
                   Code
                   </button>
-                  <button onClick={handleDrawerOpen}>
+                  {/* <button onClick={handleDrawerOpen}>
                   <span className="but" />
-                  </button>
+                  </button> */}
                   </div>
                 
               

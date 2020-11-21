@@ -16,6 +16,7 @@ const NavigationNonAuth = () => (
       <Nav>
       <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/practice">Practice Problems</Nav.Link>
+        <Nav.Link href="/ide">IDE</Nav.Link>
         {/* <Nav.Link href="/">Contests</Nav.Link> */}
         {/*https://react-bootstrap.github.io/components/navbar/#navbars-mobile-friendly*/}
         <NavDropdown class ="dropdown-toggle" data-toggle="dropdown" title="Contests" id="collasible-nav-dropdown">
@@ -34,6 +35,7 @@ const NavigationNonAuth = () => (
     </Navbar.Collapse>
   </Navbar>
 )
+
 
 
 

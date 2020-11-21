@@ -6,7 +6,7 @@ function getId(current, langs) {
         if (lang.name === current)
             id = lang.id
     })
-    return id;
+    return id; 
 }
 export function submitCodeToApi(editor) {
     let code = editor.code;
@@ -29,6 +29,7 @@ export function submitCodeToApi(editor) {
         "body": body
     });
 }
+
 export function checkStatusFromApi(token) {
     return fetch(`https://judge0.p.rapidapi.com/submissions/${token}`, {
         "method": "GET",

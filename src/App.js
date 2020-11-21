@@ -19,6 +19,9 @@ function App() {
       <Switch>
       <Route path="/signin" exact component={SignUpPage} />
       </Switch>
+      <Switch>
+      <Route path="/ide" exact component={IdeContainer} />
+      </Switch>
     </BrowserRouter>   
     </div>
   );

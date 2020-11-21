@@ -13,8 +13,6 @@ const reducers=combineReducers({
 	project:projectReducer,
 	firebase: firebaseReducer,
     firestore: firestoreReducer
-
-
 })
 
 export default reducers;
