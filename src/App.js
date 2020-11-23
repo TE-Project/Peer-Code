@@ -9,11 +9,14 @@ import SignUpPage from './signin/Signin.js';
 import IdeContainer from './idecontainer/idecontainer.js'
 import AboutUs from './aboutus/aboutus.js'
 import Home from './home/home.js'
+import Help from './help/help.js'
+
+import Practice from './practice/prac.js';
 function App() {
   return (
     <div>
     <Navigation/>
-    <IdeContainer/>
+    
     <BrowserRouter>
     <Switch>
       <Route path="/about" exact component={AboutUs} />
@@ -27,7 +30,12 @@ function App() {
       <Switch>
       <Route path="/ide" exact component={IdeContainer} />
       </Switch>
-
+      <Switch>
+      <Route path="/practice" exact component={Practice} />
+      </Switch>
+      <Switch>
+      <Route path="/help" exact component={Help} />
+      </Switch>
       
     </BrowserRouter>   
     </div>
