@@ -255,6 +255,8 @@ export default class home extends Component {
   
 </CardColumns>
   </Carousel.Item>
+
+  {/* Testimonials */}
   <Carousel.Item>
   <CardColumns>
   
@@ -294,7 +296,7 @@ export default class home extends Component {
 
 
 
-  
+  {/* footer */}
   
 <div data-aos="fade-up"
      data-aos-duration="3000">
