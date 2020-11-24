@@ -1,10 +1,16 @@
 const express = require('express');
 const bodyParser=require('body-parser')
+const cors=require('cors')
 const app = express()
 const port = 3001
 
 
-
+app.use(cors());
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
 const mongoose = require("mongoose");
 app.use(bodyParser.urlencoded({extended:false}));
 mongoose.connect("mongodb+srv://aniket:aniket1234@cluster0.rjxpi.mongodb.net/problemsDB", {useNewUrlParse: true});
@@ -29,7 +35,7 @@ const questionSchema = new mongoose.Schema({
 });
 
 const Item = mongoose.model("Item", questionSchema);
-app.use(bodyParser.json());
+app.use(express.json());
 
 
 var item1 = new Item({
@@ -48,16 +54,23 @@ var item1 = new Item({
         ],
     explanation: " no "
 });
-item1.save(function(err,item){
-  if(err) return console.error(err);
-  console.log(item.category+"added"); 
-});
+// item1.save(function(err,item){
+//   if(err) return console.error(err);
+//   console.log(item.category+"added"); 
+// });
 
+app.get("/",(req,res)=>{
+    res.send("hey");
+})
 
-
-app.get('/', (req, res) => {
-
-    res.send('Hello World!')
+app.get("/read", async(req, res) => {
+    Item.find({ },(err,result)=>{
+        if(err) {
+            res.send(err)
+        };
+        res.send(result);
+    });
+    
   })
   
 

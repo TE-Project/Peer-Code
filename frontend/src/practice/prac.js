@@ -1,4 +1,4 @@
-import React ,{ Component}from 'react'
+import React ,{useEffect,useState} from 'react'
 import quizesE from '../ide/datajsons/E6.json'
 import quizesM from '../ide/datajsons/M6.json'
 import quizesH from '../ide/datajsons/H6.json'
@@ -11,15 +11,22 @@ import { Container, Row,Col,Nav} from 'react-bootstrap'
 import { firestoreConnect} from  'react-redux-firebase'
 import { compose } from 'redux'
 import "./prac.css"
-import {Card,Tooltip,Button,OverlayTrigger} from 'react-bootstrap'
+import { Card,Tooltip,Button,OverlayTrigger } from 'react-bootstrap'
+import Axios from 'axios'
 
 
-
-class prac extends Component {
+function Prac() {
   
- 
-  render(){
+const [ques ,setQues] = useState([])
 
+
+   
+  useEffect(()=>{Axios.get('http://localhost:3001/read').then(resp=>{
+  setQues(resp.data)
+    });
+  })
+
+    
 
   return (
     <div>
@@ -43,7 +50,7 @@ class prac extends Component {
         <Col sm={9}>
           <Tab.Content>
             <Tab.Pane eventKey="first">
-              {quizesE.map(quiz=>{
+              {ques.map(quiz=>{
                 return(
                    <Link to={"/class/"+quiz.id}>
                        <div className='background-white'  >
@@ -115,7 +122,9 @@ class prac extends Component {
     
   );
 }
-}
 
 
-export default prac
+
+
+
+export default Prac

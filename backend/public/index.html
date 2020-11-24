@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Real Time Text Editor</title>
+</head>
+
+<script src="/socket.io.js"></script>
+
+<body>
+    <div>
+        Count : <span id="count"></span>
+        </br>
+    </div>
+    <textarea name="text_area" id="input_area" cols="30" rows="10"></textarea>
+    <script>
+        window.addEventListener('load', function () {
+            // hold the text context
+            let text = "";
+            let oldCount = 0;
+            const inputAreaCtx = document.getElementById('input_area');
+            const countCtx = document.getElementById('count');
+
+            const socket = io();
+
+            const url = new URL(window.location.href);
+            const editorID = url.searchParams.get("editorID");
+
+            // if no editor session is set then create a new one and
+            // redirect to the page with session
+            if (!editorID) {
+                const randomString = Math.random().toString(16).substring(2, 8);
+                const editorID = encodeURIComponent(randomString);
+                window.location.search = `editorID=${editorID}`;
+            }
+
+            /** 
+             * update the text based upon the data provided
+             * @param {String} data
+            */
+            const updateText = function (data) {
+                try {
+                    const currentPosition = inputAreaCtx.selectionStart;
+                    const oldText = inputAreaCtx.value;
+                    const oldTextLength = inputAreaCtx.value.length;
+                    const newTextLength = data.length;
+                    const lengthDiff = newTextLength - oldTextLength;
+                    const newEstimatedPosition = currentPosition + lengthDiff;
+                    inputAreaCtx.value = data;
+                    if (data.length >= newEstimatedPosition && newEstimatedPosition > 0) {
+                        let newPosition = newEstimatedPosition;
+                        if (oldText.substring(0, currentPosition) === data.substring(0, currentPosition)) {
+                            newPosition = currentPosition;
+                        }
+                        inputAreaCtx.focus();
+                        inputAreaCtx.setSelectionRange(newPosition, newPosition);
+                    }
+                } catch (error) {
+                    console.log(error);
+                }
+            }
+            // join the session
+            socket.emit('joinEditor', editorID);
+            // upon text update from others, update the text area
+            socket.on('remoteInput', updateText);
+            socket.on('latestCount', (data) => {
+                if (oldCount !== data.totalUsers) {
+                    oldCount = data.totalUsers;
+                    countCtx.innerHTML = data.totalUsers
+                }
+            });
+
+            // changes by user
+            const onCurrentUserChange = function () {
+                // check changes
+                if (inputAreaCtx.value !== text) {
+                    text = inputAreaCtx.value;
+                    socket.emit('inputText', {
+                        editorID,
+                        text
+                    });
+                }
+            }
+
+            // user based action listener
+            inputAreaCtx.addEventListener("keyup", onCurrentUserChange);
+            inputAreaCtx.addEventListener("paste", onCurrentUserChange);
+            inputAreaCtx.addEventListener("cut", onCurrentUserChange);
+        });
+    </script>
+</body>
+
+</html>
