@@ -7,6 +7,7 @@ import Card from 'react-bootstrap/Card'
 import CardColumns from 'react-bootstrap/CardColumns'
 import ListGroup from 'react-bootstrap/ListGroup'
 import './home.css'
+
 import $ from 'jquery'
 export default class home extends Component {
 
@@ -114,11 +115,13 @@ export default class home extends Component {
       });
         return (<div>
           <div data-aos="zoom-in">
-            <Carousel>
-  <Carousel.Item>
+            <Carousel className="allcaro">
+
+            
+  <Carousel.Item className="algcaro">
     <img
-      className="d-block w-100"
-      src="https://i.ibb.co/pKRxmNC/download-1.png" 
+      className="d-block w-100 imgsiz"
+      src="https://i.ibb.co/2cnbGGs/Whats-App-Image-2020-11-24-at-11-07-48-PM.jpg" 
       alt="First slide"
     />
     <Carousel.Caption>
@@ -128,8 +131,8 @@ export default class home extends Component {
   </Carousel.Item>
   <Carousel.Item>
     <img
-      className="d-block w-100"
-      src="https://i.ibb.co/pKRxmNC/download-1.png"
+      className="d-block w-100 imgsiz"
+      src="https://i.ibb.co/k0vz4RY/Whats-App-Image-2020-11-24-at-11-09-47-PM.jpg"
       alt="Second  slide"
     />
 
@@ -137,6 +140,20 @@ export default class home extends Component {
 
     <Carousel.Caption>
       <h3>Future Contest</h3>
+      <p></p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  <Carousel.Item>
+    <img
+      className="d-block w-100 imgsiz"
+      src="https://i.ibb.co/9rKdmDX/Whats-App-Image-2020-11-24-at-11-08-58-PM.jpg"
+      alt="Second  slide"
+    />
+
+    
+
+    <Carousel.Caption>
+      <h3>Past Contest</h3>
       <p></p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -153,11 +170,13 @@ export default class home extends Component {
   
   
 </Jumbotron>
+<div className="liveleadboard">
 
-<h1>LIVE DATA</h1>
 
 
 <div class="wrapper">
+<h1>LIVE DATA</h1>
+<div className="alglive">
     <div class="counter col_fourth">
       <i class="fa fa-code fa-2x"></i>
       <h2 class="timer count-title count-number" data-to="380" data-speed="1500"></h2>
@@ -175,7 +194,7 @@ export default class home extends Component {
       <h2 class="timer count-title count-number" data-to="119" data-speed="1500"></h2>
       <p class="count-text ">Total Competitions Hosted</p>
     </div>
-
+    </div>
  
 </div>
 <div data-aos="zoom-out-left">
@@ -188,11 +207,76 @@ export default class home extends Component {
   </ListGroup>
 </Card>
 </div>
+</div>
+<div className="tm">
+<Carousel>
+  <Carousel.Item>
+  <Card className="p-3">
+    <blockquote className="blockquote mb-0 card-body">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+        erat a ante.
+      </p>
+      <footer className="blockquote-footer">
+        <small className="text-muted">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </Card>
+  </Carousel.Item>
+  <Carousel.Item>
+  <Card className="p-3">
+    <blockquote className="blockquote mb-0 card-body">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+        erat a ante.
+      </p>
+      <footer className="blockquote-footer">
+        <small className="text-muted">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </Card>
+  </Carousel.Item>
+  <Carousel.Item>
+  <Card className="p-3">
+    <blockquote className="blockquote mb-0 card-body">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
+        erat a ante.
+      </p>
+      <footer className="blockquote-footer">
+        <small className="text-muted">
+          Someone famous in <cite title="Source Title">Source Title</cite>
+        </small>
+      </footer>
+    </blockquote>
+  </Card>
+  </Carousel.Item>
+</Carousel>
+</div>
 
-<Carousel data-aos="zoom-in-down">
+
+  {/* footer */}
+  
+
+  
+  
+  
+  
+  </div>
+        )
+    }
+}
+                                                                                                                              
+{/*
+
+<Carousel data-aos="zoom-in-down" className="carosiz_tm">
   <Carousel.Item interval={1000}>
   <CardColumns>
-  
+  <div className="algtestimonial">
   <Card className="p-3">
     <blockquote className="blockquote mb-0 card-body">
       <p>
@@ -219,7 +303,7 @@ export default class home extends Component {
       </footer>
     </blockquote>
   </Card>
-
+  </div>
 </CardColumns>
   </Carousel.Item>
   <Carousel.Item interval={500}>
@@ -256,7 +340,7 @@ export default class home extends Component {
 </CardColumns>
   </Carousel.Item>
 
-  {/* Testimonials */}
+  
   <Carousel.Item>
   <CardColumns>
   
@@ -292,34 +376,4 @@ export default class home extends Component {
  
 </CardColumns>
   </Carousel.Item>
-</Carousel>
-
-
-
-  {/* footer */}
-  
-<div data-aos="fade-up"
-     data-aos-duration="3000">
-<footer class="bg-dark">
-     <section id="footer" class="py-5">
-       <div class="container text-center">
-         <a href="#" class="twitter"></a>
-         <a href="#" class="linkedin"></a>
-         <a href="#" class="facebook"></a>
-         <h6 class="m-0 mt-4 text-center text-white text-capitalize">Copyright &copy; 2020 designed by </h6>
-         <h6 class="m-0 mt-4 text-center text-white text-capitalize">Mohit , Aniket , Shrishail, Harsh  </h6>
-         
-       </div>
-     </section>
-   </footer>
-   </div>
-  
-  
-  
-  
-  
-  </div>
-        )
-    }
-}
-                                                                                                                              
+</Carousel> */}

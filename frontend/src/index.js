@@ -19,14 +19,14 @@ const rrfConfig = {
 }
 
 const config = {
-  apiKey: "AIzaSyDRnbFKt2BNDK2BPK694biGMsjV3Vz3yvE",
-  authDomain: "coding-kid.firebaseapp.com",
-  databaseURL: "https://coding-kid.firebaseio.com",
-  projectId: "coding-kid",
-  storageBucket: "coding-kid.appspot.com",
-  messagingSenderId: "344630969557",
-  appId: "1:344630969557:web:bfb5da3479f7f3aaf68e5c",
-  measurementId: "G-VZC98BEQSB"
+  apiKey: "AIzaSyA9iMztGPYbQf141Mo9Z0LnhRbjsU9soWI",
+  authDomain: "peer-code.firebaseapp.com",
+  databaseURL: "https://peer-code.firebaseio.com",
+  projectId: "peer-code",
+  storageBucket: "peer-code.appspot.com",
+  messagingSenderId: "224806049851",
+  appId: "1:224806049851:web:8dfbad697a568f3ebc641e",
+  measurementId: "G-PQV3R91KJF"
 };
 
 const store = createStore(reducers,

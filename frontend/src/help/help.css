@@ -14,7 +14,9 @@ body {
 .container {
 	max-width:400px;
 	width:100%;
-	margin:0 auto;
+	
+	
+	padding-top: 20px;
 	position:relative;
 }
 
@@ -39,7 +41,7 @@ body {
 	font-size:13px;
 }
 
-fieldset {
+.ip_box{
 	border: medium none !important;
 	margin: 0 0 10px;
 	min-width: 100%;

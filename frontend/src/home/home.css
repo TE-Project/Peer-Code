@@ -85,9 +85,33 @@
       .end { margin-right: 0 !important; }
       /* Column Grids End */
       
-      .wrapper { width: 980px; margin: 30px auto; position: relative;}
-      .counter { background-color: #ffffff; padding: 20px 0; border-radius: 5px;}
+      .wrapper { max-width: 780px; margin: 30px auto; }
+      
+      .counter { min-width: 200px; background-color: #ffffff; padding: 20px 0; border-radius: 5px; margin-left: 30px; margin-right: 30px;}
       .count-title { font-size: 40px; font-weight: normal;  margin-top: 10px; margin-bottom: 0; text-align: center; }
       .count-text { font-size: 13px; font-weight: normal;  margin-top: 10px; margin-bottom: 0; text-align: center; }
-      .fa-2x { margin: 0 auto; float: none; display: table; color: #4ad1e5; }
+      .fa-2x { margin: 0 auto; float: none; color: #4ad1e5; }
       
+
+ .imgsiz{
+     min-height: 500px;
+     max-width: 1000px;
+     align-items: center;
+ }     
+ .algcaro{
+    align-items: center;
+     align-content: center;
+ }
+ .allcaro{
+     max-width: 1100px;
+     margin-left: auto;
+     margin-right: auto;
+ }
+ .liveleadboard{
+    margin-left: 50px;
+    margin-right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+
+ }

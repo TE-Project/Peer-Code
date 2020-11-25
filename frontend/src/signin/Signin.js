@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import {signIn} from '../store/authAction.js'
 import {signUp} from '../store/authAction.js'
 import { withFirebase } from '../firebase';
-import "./Signin.sass";
+
 import "./Signin.css";
 import $ from 'jquery';
 
@@ -23,7 +23,7 @@ class SignUpFormBase extends Component {
 
   onSubmit = event => {
     event.preventDefault();
-    
+    console.log(this.state)
     this.props.signUp(this.state);
   };
   
@@ -43,42 +43,93 @@ class SignUpFormBase extends Component {
 
     const { auth,authError}=this.props;
     if (auth.uid) return <Redirect to='/' /> 
-    $(document).ready(function(){
-          $(".veen .rgstr-btn button").click(function(){
-            $('.veen .wrapper').addClass('move');
-            $('.body').css('background','#f7ae40');
-            $(".veen .login-btn button").removeClass('active');
-            $(this).addClass('active');
     
-          });
-          $(".veen .login-btn button").click(function(){
-            $('.veen .wrapper').removeClass('move');
-            $('.body').css('background','#c5ff31');
-            $(".veen .rgstr-btn button").removeClass('active');
-            $(this).addClass('active');
-          });
-        });
-    window.onload=function(){
-      const signupButton = document.getElementById('signup-button'),
-      loginButton = document.getElementById('login-button'),
-      userForms = document.getElementById('user_options-forms')
+    const switchers = [...document.querySelectorAll('.switcher')]
 
-     
-      signupButton.addEventListener('click', () => {
-        userForms.classList.remove('bounceRight')
-        userForms.classList.add('bounceLeft')
-      }, false)
+switchers.forEach(item => {
+	item.addEventListener('click', function() {
+		switchers.forEach(item => item.parentElement.classList.remove('is-active'))
+		this.parentElement.classList.add('is-active')
+	})
+})
 
-      
-      loginButton.addEventListener('click', () => {
-        userForms.classList.remove('bounceLeft')
-        userForms.classList.add('bounceRight')
-      }, false)
-    }  
+   
     
-     
     return (
-    <div class="al">
+
+<section class="forms-section">
+  
+  <div class="forms">
+    <div class="form-wrapper is-active">
+      <button type="button" class="switcher switcher-login">
+        Login
+        <span class="underline"></span>
+      </button>
+      <form class="form form-login" onSubmit={this.onSignin}>
+        <fieldset>
+          <legend>Please, enter your email and password for login.</legend>
+          <div class="input-block">
+            <label for="login-email">E-mail</label>
+            <input id="login-email" name="email_si" onChange={this.onChange} type="email" required/>
+          </div>
+          <div class="input-block">
+            <label for="login-password">Password</label>
+            <input id="login-password" name="password_si" onChange={this.onChange} type="password" required/>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn-login">Login</button>
+      </form>
+    </div>
+    <div class="form-wrapper">
+      <button type="button" class="switcher switcher-signup">
+        Sign Up
+        <span class="underline"></span>
+      </button>
+      <form class="form form-signup" onSubmit={this.onSubmit}>
+        <fieldset>
+          <legend>Please, enter your Name , Email and Password for Sign Up.</legend>
+          <div class="input-block">
+            <label for="name">Name</label>
+            <input id="name" name="name"  onChange={this.onChange} type="text" required/>
+          </div>
+          <div class="input-block">
+            <label for="signup-email">E-mail</label>
+            <input id="signup-email"  name="email"  onChange={this.onChange} type="email" required/>
+          </div>
+          <div class="input-block">
+            <label for="signup-password">Password</label>
+            <input id="signup-password" name="password" onChange={this.onChange} type="password" required/>
+          </div>
+        </fieldset>
+        <button type="submit" class="btn-signup">Continue</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+    
+    );
+  }
+}
+
+const mapStateToProps = (state) => {
+  return{
+    auth: state.firebase.auth,
+    authError: state.auth.authError
+  }
+}
+
+const mapDispatchToProps=(dispatch)=>{
+ 
+  return{
+    signIn:(creds)=>dispatch(signIn(creds)),
+    signUp: (creds) => dispatch(signUp(creds))
+  }
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(SignUpFormBase);
+
+{/* <div class="al">
 
     <div class="veen">
             <div class="login-btn splits">
@@ -186,25 +237,37 @@ class SignUpFormBase extends Component {
         </section>
 
 
-    </div>
-    );
-  }
-}
+    </div> */}
 
-const mapStateToProps = (state) => {
-  return{
-    auth: state.firebase.auth,
-    authError: state.auth.authError
-  }
-}
-
-const mapDispatchToProps=(dispatch)=>{
- 
-  return{
-    signIn:(creds)=>dispatch(signIn(creds)),
-    signUp: (creds) => dispatch(signUp(creds))
-  }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(SignUpFormBase);
-
+    //  $(document).ready(function(){
+      //       $(".veen .rgstr-btn button").click(function(){
+      //         $('.veen .wrapper').addClass('move');
+      //         $('.body').css('background','#f7ae40');
+      //         $(".veen .login-btn button").removeClass('active');
+      //         $(this).addClass('active');
+      
+      //       });
+      //       $(".veen .login-btn button").click(function(){
+      //         $('.veen .wrapper').removeClass('move');
+      //         $('.body').css('background','#c5ff31');
+      //         $(".veen .rgstr-btn button").removeClass('active');
+      //         $(this).addClass('active');
+      //       });
+      //     });
+      // window.onload=function(){
+      //   const signupButton = document.getElementById('signup-button'),
+      //   loginButton = document.getElementById('login-button'),
+      //   userForms = document.getElementById('user_options-forms')
+  
+       
+      //   signupButton.addEventListener('click', () => {
+      //     userForms.classList.remove('bounceRight')
+      //     userForms.classList.add('bounceLeft')
+      //   }, false)
+  
+        
+      //   loginButton.addEventListener('click', () => {
+      //     userForms.classList.remove('bounceLeft')
+      //     userForms.classList.add('bounceRight')
+      //   }, false)
+      // }  

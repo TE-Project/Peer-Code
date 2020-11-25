@@ -1,0 +1,67 @@
+.allcomp{
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+#footer .twitter{
+    background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    } 
+    #footer .linkedin{
+    background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+    background-repeat: no-repeat;
+    background-position: -78px 0;
+    }   
+    #footer .facebook{
+    background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+    background-repeat: no-repeat;
+    background-position: -233px 0;
+    }    
+    #footer .skype{
+    background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+    background-repeat: no-repeat;
+    background-position: -156px 0;
+    }    
+    #footer .flickr{
+    background-image: url(http://manstyle.coralixthemes.com/dark/img/dark/icons/footer-icons.png);
+    background-repeat: no-repeat;
+    background-position: -310px 0;
+    }    
+    #footer a{
+    height: 56px;
+    width: 56px;
+    display: inline-block;
+    margin: 10px;
+    }                                 
+    #footer a:hover{
+    transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    }   
+    #footer .twitter:hover {
+    background-position: 0 -56px;
+    }
+    #footer .facebook:hover {
+    background-position:-233px -56px;
+    }
+    #footer .skype:hover {
+    background-position: -156px -56px;
+    }
+    #footer .linkedin:hover {
+    background-position: -78px -56px;
+    }
+    #footer .flickr:hover {
+    background-position: -310px -56px;
+    }

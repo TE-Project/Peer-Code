@@ -64,4 +64,8 @@ nsp.on('connection', function (socket) {
 });
 
 // start the server
-server.listen(3000);
+server.listen(3002);
+
+
+
+

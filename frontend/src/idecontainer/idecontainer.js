@@ -97,39 +97,7 @@ const Idecontainer = (props)=>{
     
       
             
-            <div className={classes.root}>
-              <CssBaseline />
-              <div class="wrp">
-                  <button className="codebutton" onClick={handleDrawerOpen}>
-                  Code
-                  </button>
-                  {/* <button onClick={handleDrawerOpen}>
-                  <span className="but" />
-                  </button> */}
-                  </div>
-                
-              
-              <main
-                className={clsx(classes.content, {
-                  [classes.contentShift]: open,
-                })}
-              >
-                <div className={classes.drawerHeader} />
-                </main>
-              <Drawer
-                className={classes.drawer}
-                variant="persistent"
-                anchor="right"
-                open={open}
-                classes={{
-                  paper: classes.drawerPaper,
-                }}
-              >
-                <div className={classes.drawerHeader}>
-                  <IconButton onClick={handleDrawerClose}>
-                    {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                  </IconButton>
-                </div>
+        
                 <Container id="ide" fluid>
                 <Row>
                   
@@ -138,11 +106,11 @@ const Idecontainer = (props)=>{
                   
                 </Row>
               </Container>
-              </Drawer>
+              
           
 
          
-      </div>
+     
       </div>
   )
 }

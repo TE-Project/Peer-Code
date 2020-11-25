@@ -1,65 +1,27 @@
 img{
-    width: 270px;
-    height: 300px;
-    opacity: 0.8;
+  width: 270px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0.8;
 }
 
-.Row{
-    margin: 30px 30px;
-    background: #2180ed,;
-    background: linear-gradient(to bottom, #2180ed, #F64C72);
+.abtcards{
+  margin-left: 100px;
+  margin-right: 100px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  justify-content: space-around;
+  align-content: center;
+  padding-bottom: 30px;
 }
-.cb{
-    width: 270px;
+.abtcard{
+  min-width: 250px;
 }
-.ani{
-    background: #a2d5f2;
-        width: 270px;
-
-}
-
-h4{
-        width: 270px;
-}
-img:hover{
-    opacity: 1;
-}
-.shri{
-    background: #848ccf;
-        width: 270px;
-
-}
-.mg{
-    background: #24a19c;
-    width: 270px;
-}
-.hs{
- background: #a3d2ca;
-        width: 270px;
-
-}
-.ps{
-     background: #5eaaa8;
-        width: 270px;
-
-}
-.box{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-content:center;
-    
-    padding: 20px;
-    justify-content: space-between;
-    justify-content: space-around;
-}
-.card{
-    
-    margin-top:30px;
-    margin-bottom:30px;
-}
-.hover:hover{
-    z-index: 1;
-     transform: scale(1.15);
-  box-shadow: 7px 7px 19px #d2e603;
+.abtusdetails{
+  margin-left: auto;
+  margin-right: 30px;
+  align-content: space-between;
 }
