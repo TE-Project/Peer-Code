@@ -69,7 +69,7 @@ $(function($){
             
         </ul>
         <div id="first-tab" class="tab-content">    
-        {Live.map(live=>{
+        {Live.filter(con_que => con_que.category == "live").map(live=>{
           console.log(1,live)
                   return(
                      <Link to={"/contest/"+live._id}>
@@ -85,29 +85,27 @@ $(function($){
       
 
         <div id="second-tab" class="tab-content">        
-        {Future.map(future=>{
+        {Future.filter(con_que => con_que.category == "future").map(future=>{
                 return(
-                   <Link to={"/contest/"+future._id}>
-                      
-                       <h1 class="btn1 -box-sd-effect">{future.title}</h1> <br></br>
-                       
+                  
+                      <Link to={"/contest/"+future._id}>
+                      <h1 class="btn1 -box-sd-effect">{future.title} <br></br> Date: {future.date}  <br></br> Time: {future.time}   </h1> <br></br>
+
+                      </Link>
                   
                       
-                   </Link>
+                   
                 )
               })}
         </div>
 
         <div id="third-tab" class="tab-content">        
-        {Past.map(past=>{
+        {Past.filter(con_que => con_que.category == "past").map(past=>{
                 return(
-                   <Link to={"/contest/"+past._id}>
-                      
-                       <h1 class="btn1 -box-sd-effect">{past.title}</h1> <br></br>
-                       
-                  
-                      
-                   </Link>
+                    <Link to={"/contest/"+past._id}>
+                    <h1 class="btn1 -box-sd-effect">{past.title} <br></br> Date: {past.date}  <br></br> Time: {past.time}   </h1> <br></br>
+
+                    </Link>
                 )
               })}
         </div>

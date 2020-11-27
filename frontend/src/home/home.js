@@ -117,65 +117,83 @@ export default class home extends Component {
           <div data-aos="zoom-in">
             <Carousel className="allcaro">
             
-            
-  <Carousel.Item className="algcaro">
-    <img
+    <Carousel.Item className="algcaro">
+     <img
       className="d-block w-100 imgsiz"
-      src="https://i.ibb.co/qyqpFVh/caro1.png" 
+      src="https://www.goodcore.co.uk/blog/wp-content/uploads/2019/08/coding-vs-programming-2.jpg" 
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3 className="carotext">Live Contest</h3>
+      <h3 className="carotext"></h3>
       <p></p>
     </Carousel.Caption>
   </Carousel.Item>
+  
   <Carousel.Item>
+  <Link to={"/contest"}>
     <img
       className="d-block w-100 imgsiz"
-      src="https://i.ibb.co/k0vz4RY/Whats-App-Image-2020-11-24-at-11-09-47-PM.jpg"
+      src="http://static.page-online.de/wp-content/uploads/2015/04/Events_Technik_CodingContest_042015.jpg"
       alt="Second  slide"
     />
-
+</Link>
     
 
     <Carousel.Caption>
-      <h3>Future Contest</h3>
+      <h3></h3>
       <p></p>
     </Carousel.Caption>
   </Carousel.Item>
-  <Carousel.Item>
+          
+  <Carousel.Item className="algcaro">
+  <Link to={"/contest"}>
     <img
       className="d-block w-100 imgsiz"
-      src="https://i.ibb.co/9rKdmDX/Whats-App-Image-2020-11-24-at-11-08-58-PM.jpg"
-      alt="Second  slide"
+      src="https://media.geeksforgeeks.org/img-practice/banner/competitive-programming-live-thumbnail-old.png?v=1597084200" 
+      alt="Third slide"
     />
-
+    </Link>
     
-
     <Carousel.Caption>
-      <h3>Past Contest</h3>
+      <h3 className="carotext"></h3>
       <p></p>
     </Carousel.Caption>
   </Carousel.Item>
+  
+  <Carousel.Item>
+  <Link to={"/contest"}>
+    <img
+      className="d-block w-100 imgsiz"
+      src="http://cdn.schoolloop.com/uimgcdn/aHR0cDovL2Ntcy1obHB1c2QtY2Euc2Nob29sbG9vcC5jb20vdWltZy9maWxlLzE0MjA4Nzc4MTQxMDMvODM0ODI3Mjk4NDgyMDIzMTI5NS5wbmc/MTU0NDczNjcwNjQ5OQ=="
+      alt="Fourth slide"
+    />
+    </Link>
+    
+  <Carousel.Caption>
+      <h3></h3>
+      <p></p>
+    </Carousel.Caption>
+  </Carousel.Item>
+  
+
 </Carousel>
 </div>
-<Jumbotron class="siteinfo " data-aos="flip-left"
+<Jumbotron className="siteinfo" data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
-  <h1>Hello, Folks!</h1>
-  <p>
-    Welcome all to our site PeerCode, we have lots of exciting events coming up and glad you are here to learn 
-    and explore new things along with us...
-  </p>
-  
-  
+       <span className="fas fa-laptop-code"><h1>Welcome to PeerCode</h1></span>
+  <span className="fas fa-laptop-code"><h1>Hello, Folks! 👨🏻‍💻</h1></span>
+  <span className="fas fa-laptop-code jumbo">
+    We have lots of exciting events coming up and glad you are here to learn 
+    and explore new things along with us...  
+  </span> 
 </Jumbotron>
 <div className="liveleadboard">
 
 
 
 <div class="wrapper">
-<h1>LIVE DATA</h1>
+<h1 className="fas fa-laptop-code jumbo1 siteinfo ">LIVE DATA</h1>
 <div className="alglive">
     <div class="counter col_fourth">
       <i class="fa fa-code fa-2x"></i>
@@ -199,7 +217,7 @@ export default class home extends Component {
 </div>
 <div data-aos="zoom-out-left">
 <Card style={{ width: '18rem' }}>
-  <Card.Header>Leaderboard Top 3</Card.Header>
+  <strong><h1>Leaderboard Top 3</h1></strong>
   <ListGroup variant="flush">
     <ListGroup.Item>Aniket</ListGroup.Item>
     <ListGroup.Item>Mohit</ListGroup.Item>
@@ -214,12 +232,11 @@ export default class home extends Component {
   <Card className="p-3">
     <blockquote className="blockquote mb-0 card-body">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-        erat a ante.
+        Nice Website!! Feedback system is good and login/signup is also easy. Overall Good Website.
       </p>
       <footer className="blockquote-footer">
         <small className="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
+          Student--<cite title="Source Title">Vaishnavi</cite>
         </small>
       </footer>
     </blockquote>
@@ -229,12 +246,11 @@ export default class home extends Component {
   <Card className="p-3">
     <blockquote className="blockquote mb-0 card-body">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-        erat a ante.
+      If you want to become a brilliant programmer, and are willing to put in the hours and dedicate yourself to acquiring great skills, then there is no better place for you than PeerCode.
       </p>
       <footer className="blockquote-footer">
         <small className="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
+         Student- <cite title="Source Title">Vibhute</cite>
         </small>
       </footer>
     </blockquote>
@@ -244,12 +260,11 @@ export default class home extends Component {
   <Card className="p-3">
     <blockquote className="blockquote mb-0 card-body">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere
-        erat a ante.
+      Nice initiative. Really liked the concept of competitions, made me learn a lot of concepts.
       </p>
       <footer className="blockquote-footer">
         <small className="text-muted">
-          Someone famous in <cite title="Source Title">Source Title</cite>
+          Student-<cite title="Source Title">Parth Shrivastava</cite>
         </small>
       </footer>
     </blockquote>
