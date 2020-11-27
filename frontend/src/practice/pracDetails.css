@@ -1,14 +1,5 @@
 
-   .wrapper_det{
-     position: relative;
-     clear:both;
-     margin: 0 auto 75px auto;
-     width: 100%;
-     overflow: hidden;
-     font-weight: bold;
-  font-size:1.2em;
-  color: #212121;
-   }
+  
    .top{
      background: #FF4444;
      height: 180px;
@@ -65,4 +56,11 @@
      margin-top:20px;
      font-size:15px;
      line-height:22px;
+   }
+   .tit{
+     padding:20px;
+   }
+
+   .tit{
+     padding:20px;
    }

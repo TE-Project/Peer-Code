@@ -20,20 +20,16 @@ const NavigationAuth = (props) => (
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/practice">Practice Problems</Nav.Link>
         <Nav.Link  href="/ide">IDE</Nav.Link>
+        <Nav.Link  href="/contest">Contest</Nav.Link>
         {/* <Nav.Link href="/">Contests</Nav.Link> */}
         {/*https://react-bootstrap.github.io/components/navbar/#navbars-mobile-friendly*/}
-        <NavDropdown class ="dropdown-toggle " data-toggle="dropdown" title="Contests" id="collasible-nav-dropdown">
-        <NavDropdown.Item class ="dropdown-item " href="/live">Live Contests</NavDropdown.Item>
-        <NavDropdown.Item class ="dropdown-item" href="/past">Past Contests</NavDropdown.Item>
-        <NavDropdown.Item  class ="dropdown-item" href="/future">Future Contests</NavDropdown.Item>
-        </NavDropdown>
+        
 
         <Nav.Link href="/help">Help</Nav.Link>
         <Nav.Link href="/about">About Us</Nav.Link>
-        <NavDropdown class ="dropdown-toggle" data-toggle="dropdown" title="Profile" id="collasible-nav-dropdown">
-        <NavDropdown.Item class ="dropdown-item" href="/live">Your Profile</NavDropdown.Item>
-        <NavDropdown.Item class ="dropdown-item" href="/past">Solved Questions</NavDropdown.Item>
-        <NavDropdown.Item  class ="dropdown-item" href="/future"  onClick={props.signOut} >Log Out</NavDropdown.Item>
+        <NavDropdown class ="dropdown-toggle drpdown" data-toggle="dropdown" title="Profile" id="collasible-nav-dropdown">
+        <NavDropdown.Item class ="dropdown-item" href="/profile">Your Profile</NavDropdown.Item>
+        <NavDropdown.Item  class ="dropdown-item" href="/"  onClick={props.signOut} >Log Out</NavDropdown.Item>
         </NavDropdown>
        
         

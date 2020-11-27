@@ -35,7 +35,7 @@ class QuizDetails extends Component{
   
   state = {
     ans:'',
-    id:this.props.match.params.id,
+    id:1  ,
     quiz:'',
     uid:'',
     solve:'',

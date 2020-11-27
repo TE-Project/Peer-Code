@@ -52,7 +52,7 @@ $(function($){
     
   return (
     <div className="maintab">
-    
+       
 <div id="wrapper">
   		<section id="generic-tabs">
     			<h1 class="callout">Contests</h1>
@@ -68,19 +68,21 @@ $(function($){
             </li>			    
             
         </ul>
-        <div id="first-tab" class="tab-content">        
+        <div id="first-tab" class="tab-content">    
         {Live.map(live=>{
-                return(
-                   <Link to={"/contest/"+live._id}>
-                      
-                       <h1 class="btn1 -box-sd-effect">{live.title}</h1> <br></br>
-                       
-                  
-                      
-                   </Link>
-                )
-              })}
-          </div>
+          console.log(1,live)
+                  return(
+                     <Link to={"/contest/"+live._id}>
+                        
+                         <h1 class="btn1 -box-sd-effect">{live.title} <br></br> Date: {live.date}  <br></br> Time: {live.time}   </h1> <br></br>
+                         
+                     </Link>
+                  )
+                
+              })
+              }
+        </div>
+      
 
         <div id="second-tab" class="tab-content">        
         {Future.map(future=>{

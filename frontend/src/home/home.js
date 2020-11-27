@@ -116,16 +116,16 @@ export default class home extends Component {
         return (<div>
           <div data-aos="zoom-in">
             <Carousel className="allcaro">
-
+            
             
   <Carousel.Item className="algcaro">
     <img
       className="d-block w-100 imgsiz"
-      src="https://i.ibb.co/2cnbGGs/Whats-App-Image-2020-11-24-at-11-07-48-PM.jpg" 
+      src="https://i.ibb.co/qyqpFVh/caro1.png" 
       alt="First slide"
     />
     <Carousel.Caption>
-      <h3>Live Contest</h3>
+      <h3 className="carotext">Live Contest</h3>
       <p></p>
     </Carousel.Caption>
   </Carousel.Item>
@@ -159,7 +159,7 @@ export default class home extends Component {
   </Carousel.Item>
 </Carousel>
 </div>
-<Jumbotron data-aos="flip-left"
+<Jumbotron class="siteinfo " data-aos="flip-left"
      data-aos-easing="ease-out-cubic"
      data-aos-duration="2000">
   <h1>Hello, Folks!</h1>
@@ -179,19 +179,19 @@ export default class home extends Component {
 <div className="alglive">
     <div class="counter col_fourth">
       <i class="fa fa-code fa-2x"></i>
-      <h2 class="timer count-title count-number" data-to="380" data-speed="1500"></h2>
+      <h2 class="timer count-title count-number" data-to="13" data-speed="1500"></h2>
        <p class="count-text ">Total Questions</p>
     </div>
 
     <div class="counter col_fourth">
       <i class="fa fa-coffee fa-2x"></i>
-      <h2 class="timer count-title count-number" data-to="700" data-speed="1500"></h2>
+      <h2 class="timer count-title count-number" data-to="9" data-speed="1500"></h2>
       <p class="count-text ">Total Users</p>
     </div>
 
     <div class="counter col_fourth">
       <i class="fa fa-lightbulb-o fa-2x"></i>
-      <h2 class="timer count-title count-number" data-to="119" data-speed="1500"></h2>
+      <h2 class="timer count-title count-number" data-to="2" data-speed="1500"></h2>
       <p class="count-text ">Total Competitions Hosted</p>
     </div>
     </div>
@@ -201,9 +201,9 @@ export default class home extends Component {
 <Card style={{ width: '18rem' }}>
   <Card.Header>Leaderboard Top 3</Card.Header>
   <ListGroup variant="flush">
-    <ListGroup.Item>Cras justo odio</ListGroup.Item>
-    <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-    <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+    <ListGroup.Item>Aniket</ListGroup.Item>
+    <ListGroup.Item>Mohit</ListGroup.Item>
+    <ListGroup.Item>Shrishail</ListGroup.Item>
   </ListGroup>
 </Card>
 </div>

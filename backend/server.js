@@ -18,7 +18,7 @@ mongoose.connect("mongodb+srv://aniket:aniket1234@cluster0.rjxpi.mongodb.net/pro
 
 
 const questionSchema = new mongoose.Schema({
-    key:Number,
+     key:Number,
     category:String,
     title: String,
     description:String,
@@ -31,15 +31,46 @@ const questionSchema = new mongoose.Schema({
     }],
     explanation:String
 
-
 });
 
+const contestSchema = new mongoose.Schema({
+    
+            title: String,
+            date:String,
+            time:String,
+        
+            question:[{
+                key:Number,
+                category:String,
+                title: String,
+                description:String,
+                input:String,
+                output:String,
+                constraints:String,
+                examples:[{
+                    input:String,
+                    output:String
+                }],
+                explanation:String
+            
+            }]
+            
+            
+        
+        
+
+
+});
+const Contest=mongoose.model("Contest",contestSchema);
 const Item = mongoose.model("Item", questionSchema);
 app.use(express.json());
 
 
-var item1 = new Item({
-     key: 2,
+var item1 = new Contest({
+    title:"December challenge",
+    date:"1-12-2020 Tuesday",
+    time:"7am to 7pm",
+    question:[{key: 2,
     title: "MAHASENA",
     description: "Kattapa, as you all know was one of the greatest warriors of his time. The kingdom of Maahishmati had never lost a battle under him (as army-chief), and the reason for that was their really powerful army, also called as Mahasena. Kattapa was known to be a very superstitious person. He believed that a soldier is 'lucky' if the soldier is holding an even number of weapons, and 'unlucky' otherwise. He considered the army as 'READY FOR BATTLE' if the count of 'lucky' soldiers is strictly greater than the count of 'unlucky' soldiers, and 'NOT READY' otherwise. Given the number of weapons each soldier is holding, your task is to determine whether the army formed by all these soldiers is 'READY FOR BATTLE' or 'NOT READY'. Note: You can find the definition of an even number here.",
     input: "The first line of input consists of a single integer N denoting the number of soldiers. The second line of input consists of N space separated integers A1, A2, ..., AN, where Ai denotes the number of weapons that the ith soldier is holding. ",
@@ -68,10 +99,12 @@ var item1 = new Item({
         }
     ],
     explanation: "Example 1: For the first example, N = 1 and the array A = [1]. There is only 1 soldier and he is holding 1 weapon, which is odd. The number of soldiers holding an even number of weapons = 0, and number of soldiers holding an odd number of weapons = 1. Hence, the answer is 'NOT READY' since the number of soldiers holding an even number of weapons is not greater than the number of soldiers holding an odd number of weapons."
+    }]
+
 });
 // item1.save(function(err,item){
 //   if(err) return console.error(err);
-//   console.log(item.category+"added"); 
+//   console.log(item.title +" added"); 
 // });
 
 app.get("/",(req,res)=>{
@@ -87,10 +120,22 @@ app.get("/read", async(req, res) => {
     });
     
   })
-  
+  app.get("/readcontest", async(req, res) => {
+    Contest.find({ },(err,result)=>{
+        if(err) {
+            res.send(err)
+        };
+        res.send(result);
+    });
+    
+  })
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)
   })
+
+
+
+
 
 

@@ -1,0 +1,108 @@
+[
+    {
+        "id": 1,
+        "title": "Smallest Numbers of Notes",
+        "description": "Consider a currency system in which there are enotes of six denominations, namely, Rs. 1, Rs. 2, Rs. 5, Rs. 10, Rs. 50, Rs. 100.If the sum of Rs. N is input, write a program to computer smallest number of notes that will combine to give Rs. N.",
+        "input": "The first line contains an integer T, total number of testcases. Then follow T lines, each line contains an integer N.",
+        "output": "For each test case, display the smallest number of notes that will combine to give N, in a new line.",
+        "constraints": "1 ≤ T ≤ 1000 1 ≤ N ≤ 1000000",
+        "examples": [
+            {
+                "Input": "3  1200 500 242",
+               "Output": "12 5 7"
+            }
+        ],
+        "explanation": " "
+    },
+    {
+        "id": 2,
+        "title": "MAHASENA",
+        "description": "Kattapa, as you all know was one of the greatest warriors of his time. The kingdom of Maahishmati had never lost a battle under him (as army-chief), and the reason for that was their really powerful army, also called as Mahasena. Kattapa was known to be a very superstitious person. He believed that a soldier is 'lucky' if the soldier is holding an even number of weapons, and 'unlucky' otherwise. He considered the army as 'READY FOR BATTLE' if the count of 'lucky' soldiers is strictly greater than the count of 'unlucky' soldiers, and 'NOT READY' otherwise. Given the number of weapons each soldier is holding, your task is to determine whether the army formed by all these soldiers is 'READY FOR BATTLE' or 'NOT READY'. Note: You can find the definition of an even number here.",
+        "Input": "The first line of input consists of a single integer N denoting the number of soldiers. The second line of input consists of N space separated integers A1, A2, ..., AN, where Ai denotes the number of weapons that the ith soldier is holding. ",
+        "Output": "Generate one line output saying 'READY FOR BATTLE', if the army satisfies the conditions that Kattapa requires or 'NOT READY' otherwise (quotes for clarity).",
+        "Constraints": "1 ≤ N ≤ 100 1 ≤ Ai ≤ 100",
+        "examples": [
+            {
+                "Input": "1 1",
+                "Output": "NOT READY"
+            },
+            {
+                "Input": "1 2",
+                "Output": "READY FOR BATTLE"
+            },
+            {
+                "Input": "4 11 12 13 14",
+                "Output": "NOT READY"
+            },
+            {
+                "Input": "5 1 2 3 4 5",
+                "Output": "NOT READY"
+            },
+            {
+                "Input": "3 2 3 4",
+                "Output": "READY FOR BATTLE"
+            }
+        ],
+        "explanation": "Example 1: For the first example, N = 1 and the array A = [1]. There is only 1 soldier and he is holding 1 weapon, which is odd. The number of soldiers holding an even number of weapons = 0, and number of soldiers holding an odd number of weapons = 1. Hence, the answer is 'NOT READY' since the number of soldiers holding an even number of weapons is not greater than the number of soldiers holding an odd number of weapons."
+    },
+    {
+        "id": 3,
+        "title": "Smallest Numbers of Notes",
+        "description": "Consider a currency system in which there are notes of six denominations, namely, Rs. 1, Rs. 2, Rs. 5, Rs. 10, Rs. 50, Rs. 100.If the sum of Rs. N is input, write a program to computer smallest number of notes that will combine to give Rs. N.",
+        "Input": "The first line contains an integer T, total number of testcases. Then follow T lines, each line contains an integer N.",
+        "Output": "For each test case, display the smallest number of notes that will combine to give N, in a new line.",
+        "Constraints": "1 ≤ T ≤ 1000 1 ≤ N ≤ 1000000",
+        "examples": [
+            {
+                "Input": "3  1200 500 242",
+                "Output": "12 5 7"
+            }
+        ],
+        "explanation": " "
+    },
+    {
+        "id": 4,
+        "title": "Smallest Numbers of Notes",
+        "description": "Consider a currency system in which there are notes of six denominations, namely, Rs. 1, Rs. 2, Rs. 5, Rs. 10, Rs. 50, Rs. 100.If the sum of Rs. N is input, write a program to computer smallest number of notes that will combine to give Rs. N.",
+        "Input": "The first line contains an integer T, total number of testcases. Then follow T lines, each line contains an integer N.",
+        "Output": "For each test case, display the smallest number of notes that will combine to give N, in a new line.",
+        "Constraints": "1 ≤ T ≤ 1000 1 ≤ N ≤ 1000000",
+        "examples": [
+            {
+                "Input": "3  1200 500 242",
+                "Output": "12 5 7"
+            }
+        ],
+        "explanation": " "
+    },
+    {
+        "id": 5,
+        "title": "Smallest Numbers of Notes",
+        "description": "Consider a currency system in which there are notes of six denominations, namely, Rs. 1, Rs. 2, Rs. 5, Rs. 10, Rs. 50, Rs. 100.If the sum of Rs. N is input, write a program to computer smallest number of notes that will combine to give Rs. N.",
+        "Input": "The first line contains an integer T, total number of testcases. Then follow T lines, each line contains an integer N.",
+        "Output": "For each test case, display the smallest number of notes that will combine to give N, in a new line.",
+        "Constraints": "1 ≤ T ≤ 1000 1 ≤ N ≤ 1000000",
+        "examples": [
+            {
+                "Input": "3  1200 500 242",
+                "Output": "12 5 7"
+            }
+        ],
+        "explanation": " "
+    },
+    {
+        "id": 6,
+        "title": "Smallest Numbers of Notes",
+        "description": "Consider a currency system in which there are notes of six denominations, namely, Rs. 1, Rs. 2, Rs. 5, Rs. 10, Rs. 50, Rs. 100.If the sum of Rs. N is input, write a program to computer smallest number of notes that will combine to give Rs. N.",
+        "Input": "The first line contains an integer T, total number of testcases. Then follow T lines, each line contains an integer N.",
+        "Output": "For each test case, display the smallest number of notes that will combine to give N, in a new line.",
+        "Constraints": "1 ≤ T ≤ 1000 1 ≤ N ≤ 1000000",
+        "examples": [
+            {
+                "Input": "3  1200 500 242",
+                "Output": "12 5 7"
+            }
+        ],
+        "explanation": " "
+    }
+]

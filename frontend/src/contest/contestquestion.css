@@ -1,0 +1,66 @@
+
+  
+   .top{
+    background: #FF4444;
+    height: 180px;
+    border-top: 20px solid #CC0000;
+  }
+  
+  .top .title {
+    width: 700px;
+    margin: 38px auto 0 auto; 
+  }
+  
+  .title h1 {
+    font-size:24px;
+    color:#FFF;
+    font-weight:500;
+  }
+  
+  .content{
+    padding-bottom: 20px;
+  }
+  
+  .content .card.first {
+    margin-top: -80px;
+  }
+  
+  .card{
+    position: relative;
+    background: #fff;
+    
+    padding-left: 0px;
+    padding-right: 0px;
+    width: 800px;
+    margin: 20px auto 0 auto;
+  }
+  
+  .card h2 {
+    font-size:21px;
+    font-weight:500;
+  }
+  
+  .card h2 a {
+    color:#CC0000;
+    text-decoration:none;
+  }
+  
+  .card .date {
+    color:#9e9e9e;
+    margin-top:10px;
+    font-size:14px;
+  }
+  
+  .card .text {
+    color:#212121;
+    margin-top:20px;
+    font-size:15px;
+    line-height:22px;
+  }
+  .tit{
+    padding:20px;
+  }
+
+  .tit{
+    padding:20px;
+  }

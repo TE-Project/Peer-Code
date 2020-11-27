@@ -35,30 +35,11 @@ body {
 .card-header{
   width:100px;
 }
-.maintab{font: 67.5% Helvetica, Arial, Sans-serif; 
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-	background-size: 400% 400%;
-	animation: gradient 15s ease infinite;
-}
-
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
-}
+.maintab{font: 67.5% Helvetica, Arial, Sans-serif; background:#2c3e50;}
 /*Box sizing stuff*/
 * { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
 /*Font styels*/
-.carotext{
-  color: #0a0a0a;
-  font-size: 2.2em;
-}
+
 h1 {font-weight: normal; font-size:1.6em;}
 h1.callout{color:#FFFFFF; font-size:2em; margin:1em 0;}
 p{font-size: 1.2em; color:#a3a3a3 ; line-height: 1.5;}
@@ -108,7 +89,6 @@ img {max-width: 100%;}
   margin-bottom:0.5em;
   margin-top:0.5em;
   color: #27ae60;
-  line-height: 1.9;
 }
 .-box-sd-effect:hover{
   box-shadow: 0 4px 8px hsla(210,2%,84%,.2);

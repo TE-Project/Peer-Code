@@ -54,7 +54,7 @@ $(function($){
     
 <div id="wrapper">
   		<section id="generic-tabs">
-    			<h1 class="callout">Reponsive jQuery tabs</h1>
+    			<h1 class="callout">Practice Problems</h1>
         <ul id="tabs">
             <li>
                 <a title="Home" href="#first-tab"><i class="fa "></i> Easy</a>	        
@@ -82,13 +82,12 @@ $(function($){
           </div>
 
         <div id="second-tab" class="tab-content">        
-          <h1>Twitter office photo!</h1>
-           <p>Lorem ipsum dolor sit amet, utroque splendide an quo. Omnesque pertinacia efficiantur vix at, soleat quaeque assueverit et vis. Te sit tale eripuit corrumpit, cum ea case graeci legimus. Sea ex assentior honestatis adversarium. Mei ea dico meis instructior, no eum ipsum voluptatum, quodsi pertinax postulant in sed. Te eum pertinacia suscipiantur, sea eirmod sanctus ea. Vel habeo feugait ea, an apeirian adversarium nam.</p>
+          <h1>Problems to Be Added Soon</h1>
+         
         </div>
 
         <div id="third-tab" class="tab-content">        
-          <h1>About</h1>
-          <p>Lorem ipsum dolor sit amet, utroque splendide an quo. Omnesque pertinacia efficiantur vix at, soleat quaeque assueverit et vis. Te sit tale eripuit corrumpit, cum ea case graeci legimus. Sea ex assentior honestatis adversarium. Mei ea dico meis instructior, no eum ipsum voluptatum, quodsi pertinax postulant in sed. Te eum pertinacia suscipiantur, sea eirmod sanctus ea. Vel habeo feugait ea, an apeirian adversarium nam.</p>
+        <h1>Problems to Be Added Soon</h1>
         </div>
 
 		</section>	

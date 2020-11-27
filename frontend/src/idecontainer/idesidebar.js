@@ -1,20 +1,23 @@
 import React from'react'
-
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import Typography from '@material-ui/core/Typography';
 
 import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 import Main from '../ide/comps/main'
-import Sidebar from '../idechecker/comps/sidebar'
+import Sidebar from '../ide/comps/sidebar'
 
-import { Container, Row} from 'react-bootstrap'
+import { Container, Row,Nav} from 'react-bootstrap'
 
-import './idecontainer.css'
+import "./idecontainer.css"
 const drawerWidth = 800;
 
 const useStyles = makeStyles((theme) => ({
@@ -57,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: 'flex-start',
   },
+                           
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
@@ -97,58 +101,14 @@ const Idecontainer = (props)=>{
     
       
             
-           <div className={classes.root}>
-              <CssBaseline />
-              
-              
-                  <button className="codebutton" onClick={handleDrawerOpen}>
-                  Open Code Editor
-                  </button>
-                 
-                
-              
-              <main
-                className={clsx(classes.content, {
-                  [classes.contentShift]: open,
-                })}
-              >
-                <div className={classes.drawerHeader} />
-                </main>
-              <Drawer
-                className={classes.drawer}
-                variant="persistent"
-                anchor="right"
-                open={open}
-                classes={{
-                  paper: classes.drawerPaper,
-                }}
-              >
-                <div className={classes.drawerHeader}>
-                  <IconButton onClick={handleDrawerClose}>
-                    {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-                  </IconButton>
-                </div>
-                <Container id="ide" fluid>
+           
                 <Row>
                   
                     <Main />
-                    
-                    <Sidebar  data={props.ipdata} solve={props.solve} solveE={props.solveE} solveM={props.solveM} solveH={props.solveH} uid={props.uid}/>
+                    <Sidebar />
                   
                 </Row>
-              </Container>
-              </Drawer>
-          
-
-         
-      </div>
       </div>
   )
 }
-export default Idecontainer;
-
-{/* <div class="wrp">
-<button onClick={handleDrawerOpen}>
-                  <span className="but" />
-                  </button>
-                  </div> */}
+export default Idecontainer
