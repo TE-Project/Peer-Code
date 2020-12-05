@@ -42,9 +42,7 @@ class Sidebar extends React.Component {
 
             if(output===this.props.data.examples[0].output){
                 comp_out = "Correct Answer";
-                this.setState({
-                    check:true
-                })
+                
     
             }
             else{

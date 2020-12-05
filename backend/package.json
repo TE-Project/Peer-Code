@@ -17,6 +17,7 @@
     "express": "^4.17.1",
     "http-errors": "^1.8.0",
     "mongoose": "^5.10.15",
+    "nodemailer": "^6.4.16",
     "nodemon": "^2.0.6",
     "socket.io": "^2.3.0",
     "superagent": "^6.1.0"

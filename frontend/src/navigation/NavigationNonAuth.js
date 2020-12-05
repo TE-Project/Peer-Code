@@ -5,8 +5,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import {Nav} from 'react-bootstrap';
 import {connect} from 'react-redux';
 import NavDropdown from 'react-bootstrap/NavDropdown'
+
 const NavigationNonAuth = () => (
  <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" class="bg-custom navbar2 navbar navbar-expand-lg navbar-dark" fixed="top">
+ 
     <Navbar.Brand href="/" className="navbar1">PeerCode</Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">

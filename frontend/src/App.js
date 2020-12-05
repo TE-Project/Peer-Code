@@ -1,4 +1,4 @@
-import logo from './logo.svg'; 
+
 import './App.css';
 import Axios from 'axios';
 
@@ -51,13 +51,13 @@ function App(props) {
   }
 const [ques ,setQues] = useState([])
 
-useEffect(()=>{Axios.get('http://localhost:3001/read').then(resp=>{
+useEffect(()=>{Axios.get('https://nameless-brushlands-46737.herokuapp.com/read').then(resp=>{
 setQues(resp.data)
   });
 },[])
 const [cont ,setCont] = useState([])
 
-useEffect(()=>{Axios.get('http://localhost:3001/readcontest').then(resp=>{
+useEffect(()=>{Axios.get('https://nameless-brushlands-46737.herokuapp.com/readcontest').then(resp=>{
 setCont(resp.data)
   });
 },[])

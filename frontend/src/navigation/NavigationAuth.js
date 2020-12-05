@@ -9,6 +9,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 const NavigationAuth = (props) => (
   <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" class="bg-custom" fixed="top" class="navbar">
+    
     <Navbar.Brand href="/" className="navbar1">PeerCode</Navbar.Brand>
     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
     <Navbar.Collapse id="responsive-navbar-nav">

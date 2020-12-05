@@ -1,11 +1,14 @@
 const express = require('express');
 const bodyParser=require('body-parser')
 const cors=require('cors')
+
+const port = process.env.PORT || 3001;
+
+const nodemailer = require('nodemailer');
+const creds = require('./config');
 const app = express()
-const port = 3001
-
-
 app.use(cors());
+
 app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
@@ -16,7 +19,26 @@ app.use(bodyParser.urlencoded({extended:false}));
 mongoose.connect("mongodb+srv://aniket:aniket1234@cluster0.rjxpi.mongodb.net/problemsDB", {useNewUrlParse: true});
 
 
+// nodemailer
+var transport = {
+  host: 'smtp.gmail.com', // e.g. smtp.gmail.com
+  auth: {
+    user: creds.USER,
+    pass: creds.PASS
+  }
+}
 
+var transporter = nodemailer.createTransport(transport)
+
+transporter.verify((error, success) => {
+  if (error) {
+    console.log(error);
+  } else {
+    console.log('All works fine, congratz!');
+  }
+});
+
+// mongoose
 const questionSchema = new mongoose.Schema({
      key:Number,
     category:String,
@@ -100,18 +122,18 @@ var item1 = new Contest({
         {
             input: "3 2 3 4",
             output: "READY FOR BATTLE"
-        }t
+        }
     ],
     explanation: "Example 1: For the first example, N = 1 and the array A = [1]. There is only 1 soldier and he is holding 1 weapon, which is odd. The number of soldiers holding an even number of weapons = 0, and number of soldiers holding an odd number of weapons = 1. Hence, the answer is 'NOT READY' since the number of soldiers holding an even number of weapons is not greater than the number of soldiers holding an odd number of weapons."
     }]
 
 });
-item1.save(function(err,item){
-  if(err) return console.error(err);
-  console.log(item.title +" added"); 
-});
+// item1.save(function(err,item){
+//   if(err) return console.error(err);
+//   console.log(item.title +" added"); 
+// });
 //{key:7,title:"Helping Chef",description:"Write a program, which takes an integer N and if the number is less than 10 then display 'Thanks for helping Chef!'' otherwise print '-1'.",input:"The first line contains an integer T, total number of testcases. Then follow T lines, each line contains an integer N.",output:"For each test case, output the given string or -1 depending on conditions, in a new line.        ",constraints:"1 ≤ T ≤ 1000    -20 ≤ N ≤ 20",examples:[{input:"3  1 12 -5",output:"Thanks for helping Chef!  -1  Thanks for helping Chef!"}],explanation:" "}
-        
+     
 app.get("/",(req,res)=>{
     res.send("hey");
 })
@@ -134,13 +156,31 @@ app.get("/read", async(req, res) => {
     });
     
   })
+  app.post('/send', (req, res, next) => {
+  const name = req.body.name
+  const email = req.body.email
+  
+  var mail = {
+    from: creds.USER,
+    to: email,  
+    subject: 'Welcome to PeerCode',
+
+    text:'Hello folks welcome to PeerCode lets you have great journey with us..' 
+  }
+
+  transporter.sendMail(mail, (err, data) => {
+    if (err) {
+      res.json({
+        msg: 'fail'
+      })
+    } else {
+      res.json({
+        msg: 'success'
+      })
+    }
+  })
+})
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`)
+    console.log(`Example app listening at http://localhost:${port}`);
   })
-
-
-
-
-
-

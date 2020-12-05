@@ -78,6 +78,7 @@ switchers.forEach(item => {
           </div>
         </fieldset>
         <button type="submit" class="btn-login">Login</button>
+        { authError ? <p>{authError}</p> : null }
       </form>
     </div>
     <div class="form-wrapper">
@@ -102,6 +103,7 @@ switchers.forEach(item => {
           </div>
         </fieldset>
         <button type="submit" class="btn-signup">Continue</button>
+        { authError ? <p>{authError}</p> : null }
       </form>
     </div>
   </div>

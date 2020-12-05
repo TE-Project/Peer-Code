@@ -1,3 +1,4 @@
+import axios from 'axios'
 export const signIn=(credentials)=>{
 	return(dispatch,getState,{getFirebase})=>{
 		const firebase=getFirebase();
@@ -42,8 +43,20 @@ export const signUp = (newUser) => {
       newUser.email, 
       newUser.password
     ).then(resp => {
-       firebase.auth().sendPasswordResetEmail(newUser.email);
-      firebase.auth().currentUser.sendEmailVerification();
+         axios({
+            method: "POST", 
+            url:"https://nameless-brushlands-46737.herokuapp.com/send", 
+            data: {
+        name: newUser.name,
+        email: newUser.email
+            }
+        }).then((response)=>{
+            if (response.data.msg === 'success'){
+                alert("Email sent, awesome!"); 
+            }else if(response.data.msg === 'fail'){
+                alert("Oops, something went wrong. Try again")
+            }
+        })
       return firestore.collection('users').doc(resp.user.uid).set({
         name: newUser.name,
         star:star,
